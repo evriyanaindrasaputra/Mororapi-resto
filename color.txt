@@ -1,0 +1,8 @@
+Pewter
+#BBC4C2
+Gray
+#7E7C73
+Ebony
+#464033
+Jet Black
+#140005
