@@ -1,5 +1,11 @@
+import { Menu } from "../../components";
+import { menuObj } from "./Data";
 const HomePage = () => {
-  return <div>HomePage Here</div>;
+  return (
+    <>
+      <Menu {...menuObj} />
+    </>
+  );
 };
 
 export default HomePage;

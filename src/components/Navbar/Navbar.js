@@ -14,10 +14,13 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-  const [cart, setCart] = useState(0);
+  const [carts, setCarts] = useState(
+    localStorage.getItem("carts")
+      ? JSON.parse(localStorage.getItem("carts"))
+      : []
+  );
 
   const handleClick = () => setClick(!click);
-  const addToCart = () => setCart(cart + 1);
   return (
     <>
       <IconContext.Provider value={{ color: "#fff" }}>
@@ -34,9 +37,9 @@ const Navbar = () => {
               <NavItem>
                 <NavLinks to="/menu">Menu</NavLinks>
               </NavItem>
-              <NavItem onClick={addToCart}>
+              <NavItem>
                 <NavLinks to="/pesanan">
-                  Pesanan <Cart cart={cart}>{cart}</Cart>
+                  Pesanan <Cart carts={carts}>{carts.length}</Cart>
                 </NavLinks>
               </NavItem>
             </NavMenu>

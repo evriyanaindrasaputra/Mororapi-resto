@@ -31,11 +31,12 @@ export const NavLogo = styled(Link)`
   font-weight: 400;
   display: flex;
   align-items: center;
+  @media screen and (max-width: 992px) {
 `;
 
 export const MobileIcon = styled.div`
   display: none;
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 992px) {
     display: block;
     position: absolute;
     top: 0;
@@ -52,14 +53,14 @@ export const NavMenu = styled.ul`
   list-style: none;
   text-align: center;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 992px) {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 90vh;
     position: absolute;
     top: 50px;
-    right: ${({ click }) => (click ? 0 : "-100%")};
+    left: ${({ click }) => (click ? 0 : "-100%")};
     transition: all 0.5s ease;
     opacity: 1;
     background: #7e7c73;
@@ -75,7 +76,7 @@ export const NavItem = styled.li`
     border-bottom: 2px solid #bbc4c2;
   }
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 992px) {
     width: 100%;
 
     &:hover {
@@ -93,7 +94,7 @@ export const NavLinks = styled(Link)`
   padding: 0.5em 1rem;
   height: 100%;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 992px) {
     padding: 1rem;
     width: 100%;
     display: flex;
@@ -108,14 +109,14 @@ export const NavLinks = styled(Link)`
   }
 `;
 export const Cart = styled.div`
-  display: ${({ cart }) => (cart <= 0 ? "none" : "flex")};
+  display: ${({ carts }) => (carts.length <= 0 ? "none" : "flex")};
   padding: 1px;
   position: absolute;
   font-size: 0.7rem;
   top: 10px;
   right: 0;
 
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: 992px) {
     display: none;
   }
 `;
