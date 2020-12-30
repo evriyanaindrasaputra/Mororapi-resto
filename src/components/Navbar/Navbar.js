@@ -14,7 +14,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
-  const [carts, setCarts] = useState(
+  const [carts] = useState(
     localStorage.getItem("carts")
       ? JSON.parse(localStorage.getItem("carts"))
       : []
@@ -35,12 +35,12 @@ const Navbar = () => {
                 <NavLinks to="/">Home</NavLinks>
               </NavItem>
               <NavItem>
-                <NavLinks to="/menu">Menu</NavLinks>
-              </NavItem>
-              <NavItem>
                 <NavLinks to="/pesanan">
                   Pesanan <Cart carts={carts}>{carts.length}</Cart>
                 </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks to="/login">Login</NavLinks>
               </NavItem>
             </NavMenu>
           </NavbarCotainer>

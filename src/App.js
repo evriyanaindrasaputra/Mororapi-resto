@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import GlobalStyle from "./globalStyles";
-import { HomePage } from "./pages";
+import { HomePage, LoginPage } from "./pages";
 import { Navbar } from "./components";
 
 function App() {
@@ -10,6 +10,9 @@ function App() {
       <Navbar />
       <Switch>
         <Route to="/" exact component={HomePage} />
+      </Switch>
+      <Switch>
+        <Route to="/login" exact component={LoginPage} />
       </Switch>
     </Router>
   );
